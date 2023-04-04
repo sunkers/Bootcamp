@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "DemoApplication",
+            "request": "launch",
+            "mainClass": "com.iorga.demo.DemoApplication",
+            "projectName": "demo"
+        }
+    ]
+}

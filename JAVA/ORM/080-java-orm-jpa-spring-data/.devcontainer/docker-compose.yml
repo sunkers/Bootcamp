@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/java:0-17
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432      
+
+  admin:
+    image: adminer
+    depends_on: 
+      - db
+    ports:
+      - 8080:8080
+
+volumes:
+  postgres-data:      
