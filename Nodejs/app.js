@@ -16,7 +16,7 @@
 // console.log('What\'s your name?')
 // process.stdin.on('data', (text) => {
 //     console.log('Hello ' + text)
-//     process.exit()
+//     process.exit();
 // })
 
 // Cette application doit demander à l’utilisateur son âge et, à partir de cette valeur, lui retourner son année de naissance.
@@ -48,5 +48,5 @@ process.stdin.on('data', (input) => {
 
     // 4. Afficher l'année de naissance
     console.log('You were born in ' + birthYear);
-    process.exit()
+    process.exit();
 })
