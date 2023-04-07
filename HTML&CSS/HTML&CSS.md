@@ -60,3 +60,33 @@ Images:
     <td>Ligne 2, Colonne 2</td>
   </tr>
 
+
+## CSS
+
+1. Inline CSS
+> <p style="color: red;">Paragraphe en rouge</p>
+2. Internal CSS
+> <style type="text/css">
+3. External CSS
+> <link rel="stylesheet" type="text/css" href="style.css">
+
+### Sélecteurs
+* Sélecteur de type
+> p { color: red; }
+* Sélecteur d'identifiant
+> #first { color: red; }
+* Sélecteur de classe
+> .important { color: red; }
+* Sélecteur de groupe
+> h1, h2, h3 { color: red; }
+* Sélecteur descendant
+> p em { color: red; }
+* Sélecteur d'enfant
+> p > em { color: red; }
+* Sélecteur d'attribut
+> a[href] { color: red; }
+* Sélecteur de pseudo-classe
+> a:hover { color: red; }
+* Sélecteur de pseudo-élément
+> p::first-letter { color: red; }
+
