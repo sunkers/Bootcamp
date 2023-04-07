@@ -5,10 +5,10 @@ export class AuthService {
     getHello(): string {
         return 'Hello World!';
       }
-      postHello(): string {
+    postHello(): string {
         return 'Hello World!';
       }
-      putHello(): string {
+    putHello(): string {
         return 'Hello World!';
       }
 }
