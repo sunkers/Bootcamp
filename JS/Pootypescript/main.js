@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var girafe_1 = require("./animals/girafe");
+var lion_1 = require("./animals/lion");
+var zoo_1 = require("./zoo/zoo");
+var CentralPark = new zoo_1.Zoo('Central Park', 0, 0);
+var Sophie = new girafe_1.Girafe('Sophie', 2.5, 500);
+CentralPark.addAnimal('Girafe', 'Sophie', 2.5);
+var Alex = new lion_1.Lion('Alex', 350);
+CentralPark.addAnimal('Lion', 'Alex', 350);
+Sophie.move();
+Alex.eat(Sophie);
