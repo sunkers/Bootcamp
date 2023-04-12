@@ -1,0 +1,8 @@
+.resize-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover; /* Pour maintenir le ratio de l'image */
+  }
+
+
+  

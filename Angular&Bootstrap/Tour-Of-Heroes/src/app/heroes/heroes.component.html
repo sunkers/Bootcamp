@@ -1,0 +1,31 @@
+<h2>My Heroes</h2>
+<div class="heroes-container">
+    <div class="My-heroes">
+        <ul class="heroes">
+            <li *ngFor="let hero of heroes" [ngClass]="{'selected': selectedHero === hero}" (click)="onSelect(hero)">
+                <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)">
+                <span class="badge">{{hero.id}}</span>
+                <span class="name"> {{hero.name}}</span>
+                <span class="name"> | </span>
+                <span class="level-container">
+                    <span class="niveau">{{hero.niveau}}</span>
+                </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="image-container" *ngIf="selectedHero">
+        <img [src]="selectedHero.img" class="resize-image">
+    </div>
+    
+</div>
+
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div>id: {{selectedHero.id}}</div>
+    <div>niveau: {{selectedHero.niveau}}</div>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+    </div>
+</div>
