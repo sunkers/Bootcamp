@@ -51,6 +51,12 @@ import EssentialLink from 'components/EssentialLink.vue';
 
 const linksList = [
   {
+    title: 'Home',
+    caption: 'Retour à l\'accueil',
+    icon: 'home',
+    link: '/',
+  },
+  {
     title: 'My Quasar Project',
     caption: 'Si ça marche, c\'est de la magie',
     icon: 'play_arrow',

@@ -10,8 +10,8 @@
                 <q-card>
                   <q-card-section>
                     <img class="card-image" src="https://fakeimg.pl/300/">
-                    <div class="text-h6">{{ card.title }}</div>
-                    <div>{{ card.description }}</div>
+                    <div class="text-h6">{{ card.label }}</div>
+                    <div>{{ card.text }}</div>
                   </q-card-section>
                 </q-card>
               </div>
@@ -24,8 +24,8 @@
                 <q-card>
                   <q-card-section>
                     <img class="card-image" src="https://fakeimg.pl/300/">
-                    <div class="text-h6">{{ card.title }}</div>
-                    <div>{{ card.description }}</div>
+                    <div class="text-h6">{{ card.label }}</div>
+                    <div>{{ card.text }}</div>
                   </q-card-section>
                 </q-card>
               </div>
@@ -50,61 +50,44 @@
   
   
   
-<script lang="ts">
-export default {
-    name: 'MyQuasarProject',
-    data() {
-        return {
-            newTech: '',
-            favoriteTechs: ['TypeScript', 'HTML', 'HTML', 'sss'],
-            cards: [
-                { title: 'Javascript', description: 'Java c trop bien'},
-                { title: 'TypeScript', description: 'blablabla'},
-                { title: 'VueJS', description: 'blablabla'},
-                { title: 'Quasar', description: 'blablabla'},
-                { title: 'NodeJS', description: 'blablabla'},
-                { title: 'Express', description: 'blablabla'},
-                { title: 'MongoDB', description: 'blablabla'},
-                { title: 'Mongoose', description: 'blablabla'},
-                { title: 'Git', description: 'blablabla'},
-                { title: 'Github', description: 'blablabla'},
-                { title: 'Docker', description: 'blablabla'},
-                { title: 'Kubernetes', description: 'blablabla'},
-                { title: 'Jenkins', description: 'blablabla'},
-                { title: 'Jira', description: 'blablabla'},
-                { title: 'Confluence', description: 'blablabla'},
-                { title: 'AWS', description: 'blablabla'},
-                { title: 'Azure', description: 'blablabla'},
-                { title: 'Google Cloud', description: 'blablabla'},
-                { title: 'Heroku', description: 'blablabla'},
-                { title: 'Netlify', description: 'blablabla'},
-                { title: 'Vercel', description: 'blablabla'},
-                { title: 'Digital Ocean', description: 'blablabla'},
-                { title: 'Nginx', description: 'blablabla'},
-                { title: 'Apache', description: 'blablabla'},
-            ],
-        };
-    },
-    computed: {
-        oddCards() {
-            return this.cards.filter((_, index) => index % 2 !== 0);
-        },
-        evenCards() {
-            return this.cards.filter((_, index) => index % 2 === 0);
-        },
-    },
+  <script lang="ts">
+import { defineComponent } from 'vue';
+import jsonData from '../assets/data.json';
 
-    methods: {
-        addTech() {
-            if (this.newTech) {
-                this.favoriteTechs.push(this.newTech);
-                this.newTech = '';
-            }
-        },
-    },
+interface Card {
+  id: string;
+  label: string;
+  text: string;
 }
 
+export default defineComponent({
+  name: 'MyQuasarProject',
+  data() {
+    return {
+      newTech: '',
+      cards: jsonData.techno as Card[],
+      favoriteTechs: [] as string[],
+    };
+  },
+  computed: {
+    oddCards(): Card[] {
+      return this.cards.filter((_, index: number) => index % 2 !== 0);
+    },
+    evenCards(): Card[] {
+      return this.cards.filter((_, index: number) => index % 2 === 0);
+    },
+  },
+  methods: {
+    addTech(): void {
+      if (this.newTech) {
+        this.favoriteTechs.push(this.newTech);
+        this.newTech = '';
+      }
+    },
+  },
+});
 </script>
+
 
 <style>
 
